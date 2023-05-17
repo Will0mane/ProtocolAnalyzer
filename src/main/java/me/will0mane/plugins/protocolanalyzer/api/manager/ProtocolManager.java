@@ -10,6 +10,10 @@ public class ProtocolManager {
 
     private final Map<Player, Protocol> protocolMap = new HashMap<>();
 
+    public void registerProtocol(Player player){
+        protocolMap.put(player, new Protocol(player));
+    }
+
     public Protocol getProtocol(Player player) {
         return protocolMap.getOrDefault(player, null);
     }
